@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+- 10.15.3
+install:
+- npm install
+
+env:
+  global:
+  - CC_TEST_REPORTER_ID=e3ffc172c72c7be2858e053639c49499d31fb8242188c683d5422e5fd95409d5
+  - NODE_ENV=test
+
+services:
+  - postgresql
+
+before_script:
+  - npm run create:test:db
+  - sequelize db:migrate 
+  - curl -L https://codeclimate.com/downloads/test-reporter test-reporter-latest-linux-amd64> ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
+
+script:
+    - npm test
+
+after_script:
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+ 
+after_success:
+  - npm run coveralls

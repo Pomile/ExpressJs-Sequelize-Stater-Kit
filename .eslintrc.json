@@ -1,0 +1,7 @@
+{
+    "extends": "airbnb-base",
+    "rules": {
+        "linebreak-style": 0,
+        "arrow-callback-return": 0
+    }
+}
