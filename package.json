@@ -1,0 +1,81 @@
+{
+  "name": "express-app",
+  "version": "1.0.0",
+  "description": "Express project quick start",
+  "main": "index.js",
+  "nyc": {
+    "all": true,
+    "sourceMap": false,
+    "instrument": false,
+    "include": [
+      "src/"
+    ],
+    "exclude": [
+      "src/spec/",
+      "src/database/",
+      "src/lib/",
+      "src/config/",
+      "src/index.js",
+      "dist/"
+    ]
+  },
+  "scripts": {
+    "build": "rimraf dist && mkdir dist && npm run build-with-babel",
+    "build-with-babel": "babel ./src -d dist",
+    "start": "node ./dist/index",
+    "local:test": "nodemon --watch ./src --exec npm run test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "sequelize": "./node_modules/.bin/sequelize",
+    "db:migrate": "npm run sequelize db:migrate",
+    "db:migrate:undo": "npm run sequelize db:migrate:undo:all",
+    "db:seed:all": "npm run sequelize db:seed:all",
+    "mocha:test": "mocha --require @babel/register ./src/spec/test.js --exit",
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text npm run mocha:test",
+    "createdb": "node ./dist/database/create/index.js",
+    "create:test:db": "cross-env NODE_ENV=test babel-node ./src/database/create/index.js",
+    "create:dev:db": "babel-node ./src/database/create/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pomile/NodeJs-Express-setup.git"
+  },
+  "author": "Ogedengbe Alex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pomile/NodeJs-Express-setup/issues"
+  },
+  "homepage": "https://github.com/Pomile/NodeJs-Express-setup#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.12.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.12.3",
+    "sequelize-cli": "^5.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-plugin-istanbul": "^5.2.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.5",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "rimraf": "^2.6.3",
+    "supertest": "^4.0.2"
+  }
+}
