@@ -32,10 +32,11 @@ You will need to:
 3. Create database for test and development environment
 
 ## Create Database
-To create database in:
-    production enviroment run `npm run createdb`.
-    development environment run `npm run create:dev:db`.
-    test environment run `npm run create:test:db`.
+**To create database in:**
+
+1. Production enviroment run `npm run createdb`.
+2. Development environment run `npm run create:dev:db`.
+3. Test environment run `npm run create:test:db`.
 
 ## Test
 
