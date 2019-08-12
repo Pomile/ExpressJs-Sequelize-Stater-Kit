@@ -22,29 +22,32 @@ This Project will help you to get started quickly with your Backend project usin
     3. run `npm install`
 
 ## Database Configuration
-After you install your project dependencies and dev dependency. you will need to:
+After you install your project dependencies and dev dependency. 
+You will need to:
 
-    1. create environment variable for(database name, password and username). see instructions on [how to create enviroment variable for your project](https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa)
+1. Create environment variable for(database name, password and username). see instructions on [how to create enviroment variable for your project](https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa)
 
-    2. [Download](https://www.postgresql.org/download/) and [install](https://www.postgresql.org/docs/current/install-procedure.html) postgres database
+2. [Download](https://www.postgresql.org/download/) and [install](https://www.postgresql.org/docs/current/install-procedure.html) postgres database
 
-    3. Create database for test and development environment
+3. Create database for test and development environment
 
 ## Create Database
-To create database in your production enviroment run `npm run createdb`.
-To create database in your development environment run `npm run create:dev:db`.
-To create database in your test environment run `npm run create:test:db`.
+To create database in:
+    production enviroment run `npm run createdb`.
+    development environment run `npm run create:dev:db`.
+    test environment run `npm run create:test:db`.
 
 ## Test
 
-To run your project in a test enviroment execute:
-    ```
-        > `npm test or npm run local:test`
-    ```
+To run your project in a test enviroment:
+
+Run `npm test or npm run local:test`
+
 ## Development
 
 Once you are done with your database configuration you can start your project in development mode. To start your project in this mode, all you need to do is run `npm start`
 
 *How to test your endpoint in development mode*
+
 Use Postman to test out your endpoints. You can download Postman with this [Link]() and install it.
 
