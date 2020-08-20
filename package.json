@@ -47,7 +47,7 @@
   "homepage": "https://github.com/Pomile/NodeJs-Express-setup#readme",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "debug": "^4.1.1",
     "dotenv": "^8.0.0",
